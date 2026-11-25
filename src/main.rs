@@ -3,7 +3,7 @@ use std::fs::*;
 
 fn main() {
     //opening a file
-    let file = File::open("src/hello.txt");
+    let file = File::open("files_to_test/hello.txt");
 
     match file {
         Ok(f) => println!("File opened successfully: {:?}", f),
@@ -11,7 +11,7 @@ fn main() {
     }
 
     // reading the file as text
-    let contents = read_to_string("src/hello.txt");
+    let contents = read_to_string("files_to_test/hello.txt");
     match contents {
         Ok(ref c) => println!("File contents: {}", c),
         Err(ref e) => println!("Error reading file: {:?}", e),
@@ -19,7 +19,7 @@ fn main() {
 
     // reading the file as raw bytes
 
-    let bytes = read("src/hello.txt");
+    let bytes = read("files_to_test/hello.txt");
     match bytes {
         Ok(ref data) => {
             println!("Raw bytes are : {:?}", bytes);
